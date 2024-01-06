@@ -3,7 +3,7 @@
         <h1 class="text-center p-3">Contatti</h1>
         <div class="row">
             <div class="col-md-6">
-                <img src="../assets/vincenzo.jpg" alt="Alfredo Pumilia" class="img-fluid" />
+                <img src="../assets/contact.jpg" alt="Alfredo Pumilia" class="img-fluid" />
             </div>
             <div class="col-md-6">
                 <div class="contatti">

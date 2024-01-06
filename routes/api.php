@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\LeadController;
-use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\ItemController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,15 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::namespace('Api')
-    ->prefix('posts')
-    ->group(function(){
-        Route::get('/',[ItemController::class, 'index']);
-
-    });
-
-Route::post('/contacts', [LeadController::class, 'store']);
+Route::get('/posts', [ItemController::class, 'index']);
 
 
 

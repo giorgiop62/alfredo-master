@@ -34,6 +34,23 @@ class PostController extends Controller
         return view('admin.posts.index', compact('posts', 'direction'));
     }
 
+    public function getPost()
+    {
+        if(isset($_GET['search'])){
+            $search = $_GET['search'];
+            $posts = Post::where('user_id', Auth::id())
+                        ->where('title','like',"%$search%")
+                        ->paginate(10);
+        }else{
+            $posts = Post::where('user_id', Auth::id())->orderBy('id','desc')->paginate(10);
+        }
+        $direction = 'desc';
+        return response()->json([
+            'posts' => $posts,
+            'direction' => $direction,
+        ]);
+    }
+
     public function categories_post(){
 
         $categories = Category::all();
@@ -103,7 +120,7 @@ class PostController extends Controller
             $new_post->tags()->attach($post_data['tags']);
         }
 
-        return redirect()->route('admin.posts.show',$new_post)->with('message','Post creato correttamente');
+        return redirect()->route('admin.posts.index',$new_post)->with('message','Post creato correttamente');
     }
 
     /**
@@ -175,7 +192,7 @@ class PostController extends Controller
 
 
 
-        return redirect()->route('admin.posts.show',$post)->with('message','Post aggiornato correttamente');
+        return redirect()->route('admin.posts.index',$post)->with('message','Post aggiornato correttamente');
     }
 
     /**

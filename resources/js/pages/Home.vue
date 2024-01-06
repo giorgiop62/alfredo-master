@@ -11,7 +11,7 @@ export default {
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../../js/assets/grupppo.jpg" class="d-block w-100" alt="...">
+                        <img src="../../js/assets/me.jpg" class="d-block w-100" alt="...">
 
                     </div>
                     <div class="carousel-item">

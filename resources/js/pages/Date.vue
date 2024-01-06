@@ -3,28 +3,20 @@ import axios from 'axios'
 import { BASE_URL } from '../data/data'
 import { store } from '../data/store'
 
-
-
-
 export default {
     name: "Date",
     data() {
         return {
             BASE_URL,
             store,
-            active_base_url: BASE_URL + 'posts'
+            active_base_url: BASE_URL + '/api/posts'
         }
     },
     methods: {
         getApi(url) {
             axios.get(url)
                 .then(result => {
-                    store.main_title = 'elenco post';
-                    store.posts = result.data.posts.data;
-                    store.links = result.data.posts.links;
-                    store.categories = result.data.categories;
-                    store.tags = result.data.tags;
-
+                    console.log(result.posts);
                 })
         },
 
@@ -49,7 +41,7 @@ export default {
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="links in store.links " :key="index">
+                <tr v-for="(links, index) in store.links" :key="index">
                     <td>{{ links.date }}</td>
                     <td>{{ links.title }}</td>
                     <td>{{ links.text }}</td>
@@ -63,7 +55,8 @@ export default {
 .container-fluid {
     color: white;
     height: 100vh;
-    background-image: url('../assets/bianco.JPG');
+    background-image: url('../assets/violinome.jpg');
     background-size: cover;
 }
+
 </style>
