@@ -31,12 +31,10 @@ export default {
             Attualmente sta Lavorando al suo disco “Miradöis”. <br>
             BAND: <span>Araputo Zen</span> <br>
             Zygrya sting trio</p>
-        <div class="img">
-            <div class="text-center">
-                <img src="../assets/araputi.jpg" alt="">
-            </div>
-        </div>
 
+        <div class="img d-flex  justify-content-center">
+            <img src="../assets/araputi.jpg" alt="">
+        </div>
 
     </div>
 </template>
@@ -64,7 +62,15 @@ h1 {
 }
 
 img {
-    max-width: 500px;
-    text-align: center;
+    max-width: 100%;
+    width: 500px;
+    margin-bottom: 70px;
+}
+
+@media only screen and (max-width: 767px) {
+    img {
+        width: 100%;
+        /* Larghezza massima del 100% quando la larghezza del dispositivo è inferiore a 767px */
+    }
 }
 </style>

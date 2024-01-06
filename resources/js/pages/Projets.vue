@@ -65,11 +65,10 @@ export default {
 
 @media only screen and (max-width: 600px) {
 
-    /* Regola per la visualizzazione mobile (max-width: 600px) */
     .box-disco {
         flex-direction: column;
         align-items: center;
-        /* Centra le cards verticalmente */
+        margin: 0 auto;
     }
 
     .container-fluid {
@@ -78,7 +77,6 @@ export default {
 
     .card {
         width: 80%;
-        /* Larghezza delle cards al 80% della larghezza disponibile */
     }
 }
 </style>

@@ -44,6 +44,7 @@ export default {
 .container-fluid {
     background-color: black;
     color: white;
+    height: 100vh;
 }
 
 .grey {

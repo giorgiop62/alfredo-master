@@ -20,12 +20,18 @@ footer {
     padding: 0 23px;
 }
 
-
-
 .login {
     text-decoration: none;
     color: black;
     cursor: pointer;
 
+}
+
+@media (max-width: 767px) {
+    footer {
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
 </style>

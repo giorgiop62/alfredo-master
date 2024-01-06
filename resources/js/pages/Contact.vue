@@ -59,7 +59,7 @@ a {
 
 @media (max-width: 412px) {
     .contatti {
-        font-size: 27px;
+        font-size: 20px;
     }
 }
 </style>
